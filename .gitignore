@@ -4,3 +4,5 @@ backup/
 app/temp/
 nbproject/
 config.js
+assets/vendor/
+npm-debug.log

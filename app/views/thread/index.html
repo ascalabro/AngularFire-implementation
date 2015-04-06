@@ -1,0 +1,19 @@
+<h1>Affable's Listings</h1>
+<!-- Begin categories navigation !-->
+<h4>Categories</h4>
+<div >
+    <ul class="nav nav-tabs">
+        <li ui-sref-active="active" role="presentation"><a ui-sref="store.list({category_id: 0})" class="thumbnail">All Categories</a></li>
+        <li ng-repeat="category in categories track by $index" role="presentation" ui-sref-active="active"  >
+            <a ui-sref="store.list({category_id: category.id})" class="thumbnail">{{category.name}}</a>
+        </li>
+    </ul>
+</div>
+<!-- End categories navigation !-->
+<!-- Begin content container !-->
+<div class="panel ">
+    <ui-view>
+
+    </ui-view>
+</div>
+<!-- End content container !-->
