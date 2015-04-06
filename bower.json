@@ -1,0 +1,24 @@
+{
+  "name": "djenchat",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ascalabro/djenchat",
+  "authors": [
+    "Angelo Scalabroni <armotek5421@msn.com>"
+  ],
+  "description": "Realtime forum application for dev teams to track progress and discuss issues, much like a ticket system",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularfire": "~1.0.0",
+    "angular-resource": "~1.3.15",
+    "angular-ui-router": "~0.2.13",
+    "bootstrap": "~3.3.4",
+    "angular-route": "~1.3.15"
+  }
+}
