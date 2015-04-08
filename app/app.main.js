@@ -4,40 +4,40 @@
 var app = angular.module('mainApp', [
     'firebase',
     'ui.router',
+    'firebaseService'
 ])
         .constant("config", {
             "pageTitle": "DjenChat - ",
-            "firebaseAppUrl": "http://djenchat.firebase.com"
+            "firebaseAppUrl": "https://djenchat.firebaseio.com"
         })
         .config(['$stateProvider', '$urlRouterProvider',function(stateProvider, urlRouterProvider) {
                 stateProvider
                         .state('home', {
                             url: '/',
                             templateUrl: app.config.viewPath + '/thread/index.html',
-                            controller: 'threadListCtrl'
+                            controller: 'threadCtrl'
                         })
                         .state('list', {
-                            url: '/thread/',
+                            url: '/thread/list',
                             templateUrl: app.config.viewPath + '/thread/index.html',
-                            controller: 'threadIndexCtrl'
+                            controller: 'threadCtrl'
                         })
                         .state('view', {
                             url: '/thread/:thread_id',
                             templateUrl: app.config.viewPath + '/thread/view.html',
-                            controller: 'threadViewCtrl'
+                            controller: 'threadCtrl'
                         })
                         .state('create', {
-                            url: '/create',
-                            templateUrl: app.config.viewPath + '/thread/view.html',
-                            controller: 'threadCreateCtrl'
-                        })
-                        ;
-//                urlRouterProvider.otherwise('/home');
-                urlRouterProvider.otherwise('/');
+                            url: '/thread/create',
+                            templateUrl: app.config.viewPath + '/thread/create.html',
+                            controller: 'threadCtrl'
+                        });
+                urlRouterProvider.otherwise('/home');
+//                urlRouterProvider.otherwise('/');
             }])
         .run(['$rootScope', '$state', '$stateParams', 'config', function(rootScope, state, stateParams, config) {
                 rootScope.$state = state;
                 rootScope.pageTitle = config.pageTitle;
                 return rootScope.$stateParams = stateParams;
             }])
-        .service('FbRef', ['config.firebaseAppUrl', Firebase]);
+//        .service('FbRef', ['app.config.firebaseAppUrl', Firebase]);
