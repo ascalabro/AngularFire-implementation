@@ -1,9 +1,10 @@
 <h4>All topics</h4>
 <section>
     <ul id="example-messages" class="example-chat-messages">
-        <li ng-repeat="thread in data">
+        <li ng-repeat="(threadId, thread) in threads">
             <strong class="example-chat-username">{{ thread.title}}</strong>
             {{ thread.$value}}
+            <a ng-click="deleteThread(threadId)">delete</a>
         </li>
     </ul>
 </section>

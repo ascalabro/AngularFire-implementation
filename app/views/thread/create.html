@@ -10,3 +10,14 @@
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
+
+<h4>Existing Threads</h4>
+<section>
+    <ul id="example-messages" class="example-chat-messages">
+        <li ng-repeat="(threadId, thread) in threads">
+            <strong class="example-chat-username">{{ thread.title}}</strong>
+            {{ thread.author}}
+            <a ng-click="deleteThread(threadId)">delete</a>
+        </li>
+    </ul>
+</section>

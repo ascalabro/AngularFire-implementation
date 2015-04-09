@@ -12,11 +12,11 @@ var app = angular.module('mainApp', [
         })
         .config(['$stateProvider', '$urlRouterProvider',function(stateProvider, urlRouterProvider) {
                 stateProvider
-                        .state('home', {
-                            url: '/',
-                            templateUrl: app.config.viewPath + '/thread/index.html',
-                            controller: 'threadCtrl'
-                        })
+//                        .state('home', {
+//                            url: '/',
+//                            templateUrl: app.config.viewPath + '/thread/index.html',
+//                            controller: 'threadCtrl'
+//                        })
                         .state('list', {
                             url: '/thread/list',
                             templateUrl: app.config.viewPath + '/thread/index.html',
@@ -24,7 +24,7 @@ var app = angular.module('mainApp', [
                         })
                         .state('view', {
                             url: '/thread/:thread_id',
-                            templateUrl: app.config.viewPath + '/thread/view.html',
+                            templateUrl: app.config.viewPath + '/thread/index.html',
                             controller: 'threadCtrl'
                         })
                         .state('create', {
@@ -32,7 +32,7 @@ var app = angular.module('mainApp', [
                             templateUrl: app.config.viewPath + '/thread/create.html',
                             controller: 'threadCtrl'
                         });
-                urlRouterProvider.otherwise('/home');
+                urlRouterProvider.otherwise('thread/list');
 //                urlRouterProvider.otherwise('/');
             }])
         .run(['$rootScope', '$state', '$stateParams', 'config', function(rootScope, state, stateParams, config) {
