@@ -11,7 +11,6 @@ app.controller("threadCtrl", ["$scope", "threadFactory", "$firebaseArray",
             console.log($scope.thread);
             threadFactory.save($scope.thread, function(ref) {
                 $scope.threads[ref.name] = $scope.thread;
-                $scope.thread = {title: 'Default Title', author: 'Default Author'};
             });
         };
 
