@@ -2,4 +2,4 @@
  * Services file
  */
 
-var service = angular.module("dataService", ["ngResource"]);
+var service = angular.module("firebaseService", ["ngResource"]);

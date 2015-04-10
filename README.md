@@ -8,3 +8,5 @@ app.config = {
     firebaseAppSecret: "4wpZ63CXRSkIw5XD0Ohw2n6yrSnsaZv0mUJ2kwv4"
 };
 </pre>
+
+Using tutorial <a href="https://thinkster.io/learn-to-build-realtime-webapps">https://thinkster.io/learn-to-build-realtime-webapps/</a>
