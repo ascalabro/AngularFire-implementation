@@ -1,5 +1,5 @@
-app.controller("threadCtrl", ["$scope", "threadFactory", "$firebaseArray",
-    function($scope, threadFactory, $firebaseArray) {
+app.controller("threadCtrl", ["$scope", "threadFactory", "$modal",
+    function($scope, threadFactory, $modal) {
 //        $scope.threads = [];
 
         threadFactory.get(function(data) {
@@ -19,5 +19,25 @@ app.controller("threadCtrl", ["$scope", "threadFactory", "$firebaseArray",
                 delete $scope.threads[threadId];
             });
         };
+
+        $scope.openThreadModal = function(threadId) {
+            var modalInstance = $modal.open({
+                templateUrl: 'app/views/thread/partials/_viewThreadModal.html',
+                controller: 'threadViewCtrl',
+                size: "lg",
+                resolve: {
+                    items: function() {
+                        return $scope.items;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function(selectedItem) {
+                $scope.selected = selectedItem;
+            }, function() {
+//      $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+
     }
 ]);

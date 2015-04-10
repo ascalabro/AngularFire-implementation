@@ -4,7 +4,8 @@
 var app = angular.module('mainApp', [
     'firebase',
     'ui.router',
-    'firebaseService'
+    'firebaseService',
+    'ui.bootstrap',
 ])
         .constant("config", {
             "pageTitle": "DjenChat - ",

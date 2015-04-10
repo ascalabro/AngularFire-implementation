@@ -1,5 +1,5 @@
-app.controller("threadCommentCtrl", ["$scope", "$firebaseArray",
-    function($scope, $firebaseArray, $log) {
+app.controller("threadViewCtrl", ["$scope",
+    function($scope) {
 //        var ref = new Firebase("https://djenchat.firebaseio.com/");
 //        $scope.messages = $firebaseArray(ref);
 //        console.log($scope.messages);

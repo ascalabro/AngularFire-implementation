@@ -20,11 +20,11 @@
     <h3>Currently being discussed: </h3>
     <div ng-repeat="(threadId, thread) in threads" class="panel panel-default">
         <div class="panel-heading">
-            <h4><a class="anchorjs-link" href="#panel-title">{{ thread.title}}</a></h4>
+            <h4><a class="anchorjs-link" ng-click="openThreadModal(threadId)" href="#panel-title">{{ thread.title}}</a></h4>
             By: <button type="button" class="btn btn-default btn-sm">
                 <span class="glyphicon glyphicon-tag"></span> {{ thread.author}}
             </button>
-            <button ng-click="deleteThread(threadId)" type="button" class="btn btn-default btn-sm">
+            <button ng-click="deleteThread(threadId)" type="button" class="pull-right btn btn-danger btn-sm">
                 <span class="glyphicon glyphicon-remove"></span> Delete Thread
             </button>
         </div>
