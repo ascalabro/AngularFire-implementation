@@ -9,34 +9,27 @@
             <input ng-model="thread.author" type="text" class="form-control" placeholder="Author Name">
         </div>
         <div class="form-group">
-            <label for="body">Details<label>
-            <input ng-model="thread.body" type="text" class="form-control" placeholder="Thread Detail">
+            <label for="body">Content</label>
+            <textarea ng-model="thread.body" type="text" class="form-control" placeholder="Content"></textarea>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </section>
-<!--<section>
-    <h4>Existing Threads</h4>
-    <ul id="example-messages" class="example-chat-messages">
-        <li>
-            <strong class="example-chat-username">By: {{ thread.author}}</strong><strong> Title: {{ thread.title}}</strong>
-            {{ thread.author}}
-
-            <a class="" ng-click="deleteThread(threadId)">delete</a>
-        </li>
-    </ul>
-</section>-->
-<div>
+<hr>
+<section>
+    <h3>Currently being discussed: </h3>
     <div ng-repeat="(threadId, thread) in threads" class="panel panel-default">
         <div class="panel-heading">
-            <a class="anchorjs-link" href="#panel-title"><h4><span class="label label-default" id="panel-title">Title: <span class="anchorjs-icon">{{ thread.title}}</span></span></h4></a>
-            <a class="anchorjs-link" href="#panel-title"><h4><span class="label label-info" id="panel-title">Author: <span class="anchorjs-icon">{{ thread.author}}</span></span></h4></a>
+            <h4><a class="anchorjs-link" href="#panel-title">{{ thread.title}}</a></h4>
+            By: <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-tag"></span> {{ thread.author}}
+            </button>
             <button ng-click="deleteThread(threadId)" type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-remove"></span> Delete Thread 
+                <span class="glyphicon glyphicon-remove"></span> Delete Thread
             </button>
         </div>
         <div class="panel-body">
             {{thread.body}}
         </div>
     </div>
-</div>
+</section>
